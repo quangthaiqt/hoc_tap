@@ -1,0 +1,15 @@
+header {
+    width: 80%;
+    max-width: 800px;
+    padding: 2em;
+    background-color: #5a9c1c;
+    box-shadow: 0 0 20px rgb(194, 180, 180);
+    border-radius: 8px;
+    margin-top: -1.5em; /* Duy trì khoảng cách giữa header và section */
+}
+main{
+    display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+}
