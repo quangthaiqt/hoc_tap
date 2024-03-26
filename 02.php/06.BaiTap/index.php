@@ -17,18 +17,74 @@ $result = $conn->query($sql);
 // Nếu lớn hơn tức là có kết quả, ngược lại sẽ không có kết quả
 // Vẽ bảng
 // Dòng tiêu đề
+?>
+<style>
+    table{
+        border-collapse: collapse;
+    }
+    th,td {
+        border: 1px solid #dddddd;
+    }
+</style>
+<table >
+    <tr >
+        <th>
+            Mã nhân viên
+        </th>
+        <th>
+            Họ và tên
+        </th>
+        <th>
+            Ngày sinh
+        </th>
+        <th>
+            Số điện thoại
+        </th>
+        <th>
+            Hệ số lương
+        </th>
+    
+    </tr>
+
+
+<?php
+
+
 if ($result->num_rows > 0) 
 {
     // Sử dụng vòng lặp while để lặp kết quả
     while($row = $result->fetch_assoc()) {
         // Các dòng chi tiết
-       echo "Họ tên: " . $row["hoten"] . "---" . "Ngày sinh: " . $row["ngaysinh"] . "</br>";
+        ?>
+        <tr>
+            <td>
+                <?php echo $row["manv"]  ?>
+            </td>
+            <td>
+                <?php echo $row["hoten"] ?>
+            </td>
+            <td>
+                <?php echo $row["ngaysinh"]  ?>
+            </td>
+            <td>
+                <?php echo $row["dienthoai"]  ?>
+            </td>
+            <td>
+                <?php echo $row["hsluong"]  ?>
+            </td>
+        </tr>
+
+        <?php
+       echo "<tr></tr>" . "Họ tên: " . $row["hoten"] . "---" . "Ngày sinh: " . $row["ngaysinh"] . "</br>";
     }
 } 
 else {
     echo "Không có record nào";
 }
+?>
 
+</table>
+<?php
 // Ngắt kết nối
 $conn->close();
 
