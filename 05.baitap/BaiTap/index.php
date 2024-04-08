@@ -4,22 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh sách Sản phẩm</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Sản phẩm</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        /* table {
-            border-collapse: collapse;
-        }
-
-        th,
-        td {
-            border: 1px solid #dddddd;
-        } */
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <?php
@@ -32,7 +22,7 @@ if ($conn->connect_error) {
 }
 
 // Câu SQL lấy danh sách
-$sql = "SELECT * FROM nhanvien";
+$sql = "SELECT * FROM ao";
 
 // Thực thi câu truy vấn và gán vào $result
 $result = $conn->query($sql);
@@ -44,9 +34,10 @@ $result = $conn->query($sql);
 ?>
 
 <body>
+
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Menu</a>
+            <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -57,7 +48,7 @@ $result = $conn->query($sql);
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -76,20 +67,20 @@ $result = $conn->query($sql);
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li> -->
+                    </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <a class="nav-link me-5" href="#">Xin chào bạn abc</a>
-                    <a class="nav-link" href="#">Đăng xuất</a>
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
         </div>
     </nav>
 
-    <div class="container mt-5">
+    <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <h1>Danh sách nhân viên</h1>
+            <div class="col-md-12 mt-5">
+                <h1>Áo</h1>
             </div>
         </div>
         <div class="row">
@@ -107,7 +98,7 @@ $result = $conn->query($sql);
 
             </div>
             <div class="col-md-1">
-                <a href="Create/index.php">
+                <a href="../create/index.php">
                     <button type="submit" class="btn btn-primary mb-2">Thêm</button>
                 </a>
 
@@ -116,22 +107,22 @@ $result = $conn->query($sql);
 
         <div class="row mt-3">
             <div class="col-md-12">
-                <table id="table-nhan-vien" class="table table-striped table-hover table-bordered">
+                <table id="table-ao" class="table table-striped table-hover table-bordered">
                     <tr class="table-success">
                         <th>
-                            Mã nhân viên
+                            Mã áo
                         </th>
                         <th>
-                            Họ và tên
+                            Tên áo
                         </th>
                         <th>
-                            Ngày sinh
+                            Giới tính
                         </th>
                         <th>
-                            Số điện thoại
+                            Giá
                         </th>
                         <th>
-                            Hệ số lương
+                            Hình ảnh
                         </th>
                         <th colspan="2">
                             Tùy chọn
@@ -147,27 +138,25 @@ $result = $conn->query($sql);
                             ?>
                             <tr>
                                 <td>
-                                    <?php echo $row["manv"] ?>
+                                    <?php echo $row["maao"] ?>
                                 </td>
                                 <td>
-                                    <?php echo $row["hoten"] ?>
+                                    <?php echo $row["tenao"] ?>
                                 </td>
                                 <td>
-                                    <?php echo $row["ngaysinh"] ?>
+                                    <?php echo $row["gioitinh"] ?>
                                 </td>
                                 <td>
-                                    <?php echo $row["dienthoai"] ?>
+                                    <?php echo $row["gia"] ?>
                                 </td>
                                 <td>
-                                    <?php echo $row["hsluong"] ?>
+                                    <?php echo $row["hinhanh"] ?>
                                 </td>
                                 <td class="text-center">
-                                    <a href="Update/index.php?manv=<?php echo $row["manv"]; ?> &hoten=<?php echo $row["hoten"]; ?> &ngaysinh=<?php echo $row["ngaysinh"] ; ?> &dienthoai=<?php  echo $row["dienthoai"] ; ?> &hsluong=<?php echo $row["hsluong"]; ?>">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
+                                    <a href="../update/index.php?&maao=<?php echo $row["maao"] ?> &tenao=<?php echo $row["tenao"] ?> &gioitinh=<?php echo $row["gioitinh"] ?> &gia=<?php echo $row["gia"] ?> &hinhanh=<?php echo $row["hinhanh"] ?> "><i class="fa-solid fa-pen-to-square"></i></a>
                                 </td>
                                 <td class="text-center">
-                                    <a href="Delete/index.php"><i class="fa-solid fa-trash"></i></a>
+                                    <a href="delete/index.php"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
 
@@ -184,21 +173,10 @@ $result = $conn->query($sql);
         </div>
     </div>
 
-    <?php
-    // Ngắt kết nối
-    $conn->close();
 
-    ?>
-    <script>
-        var idNhanvien = document.getElementById("table-nhan-vien");
-        console.log(idNhanvien);
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script>import { Input, Ripple, initMDB } from "mdb-ui-kit";
 
-        initMDB({ Input, Ripple });</script>
+
+
 </body>
 
 </html>
