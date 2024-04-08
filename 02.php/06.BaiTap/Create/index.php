@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chỉnh sửa</title>
+    <title>Thêm</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
@@ -56,28 +56,36 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
-                <h1>Chỉnh sửa nhân viên</h1>
+                <h1>Thêm nhân viên</h1>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
+                <form action="process-create.php" method="get">
+                    <div class="mb-3">
+                        <label for="hoten" class="form-label">Họ và tên : </label>
+                        <input type="text" class="form-control" id="hoten" name="hoten">
+                    </div>
+                    <div class="mb-3">
+                        <label for="ngaysinh" class="form-label">Ngày sinh</label>
+                        <input type="date" class="form-control" id="ngaysinh" name="ngaysinh">
+                    </div>
+                    <div class="mb-3">
+                        <label for="dienthoai" class="form-label">Số điện thoại : </label>
+                        <input type="text" class="form-control" id="dienthoai" name="dienthoai">
+                    </div>
+                    <div class="mb-3">
+                        <label for="hsluong" class="form-label">Hệ số lương : </label>
+                        <input type="number" class="form-control" id="hsluong" name="hsluong">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                    <button type="submit" class="btn btn-danger">
+                        <a href="/hoc_tap/02.php/06.BaiTap/index.php">Hủy</a>
+                    </button>
+                </form>
             </div>
         </div>
     </div>
-    <form >
-        <label for="hoten">Họ và tên : </label> <br>
-        <input type="text" id="hoten" name=""hoten" /> <br />
-        <label for="ngaysinh">Ngày sinh: </label> <br>
-        <input type="month" id="ngaysinh" name="ngaysinh" /> <br />
-        <label for="sdt">Số điện thoại : </label> <br>
-        <input type="number" id="sdt" name="sdt" /> <br />
-        <label for="hsl">Hệ số lương : </label> <br>
-        <input type="number" id="hsl" name="hsl" /> <br />
-        <button name="button" type="button">Lưu</button>
-        <button name="button" type="button">Hủy</button>
-
-
-    </form>
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

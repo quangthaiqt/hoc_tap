@@ -93,6 +93,28 @@ $result = $conn->query($sql);
             </div>
         </div>
         <div class="row">
+            <div class="col-md-7"></div>
+
+            <div class="col-md-4">
+                <div class="input-group">
+                    <div class="form-outline" data-mdb-input-init>
+                        <input type="search" id="form1" class="form-control" placeholder="Search" />
+                    </div>
+                    <a href="Them/index.php"><button type="button" class="btn btn-primary" data-mdb-ripple-init>
+                            <i class="fas fa-search"></i>
+                        </button></a>
+                </div>
+
+            </div>
+            <div class="col-md-1">
+                <a href="Create/index.php">
+                    <button type="submit" class="btn btn-primary mb-2">Thêm</button>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="row mt-3">
             <div class="col-md-12">
                 <table id="table-nhan-vien" class="table table-striped table-hover table-bordered">
                     <tr class="table-success">
@@ -140,7 +162,9 @@ $result = $conn->query($sql);
                                     <?php echo $row["hsluong"] ?>
                                 </td>
                                 <td class="text-center">
-                                    <a href="Edit/index.php"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="Update/index.php?manv=<?php echo $row["manv"]; ?> &hoten=<?php echo $row["hoten"]; ?> &ngaysinh=<?php echo $row["ngaysinh"] ; ?> &dienthoai=<?php  echo $row["dienthoai"] ; ?> &hsluong=<?php echo $row["hsluong"]; ?>">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
                                 </td>
                                 <td class="text-center">
                                     <a href="Delete/index.php"><i class="fa-solid fa-trash"></i></a>
@@ -172,6 +196,9 @@ $result = $conn->query($sql);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script>import { Input, Ripple, initMDB } from "mdb-ui-kit";
+
+        initMDB({ Input, Ripple });</script>
 </body>
 
 </html>
