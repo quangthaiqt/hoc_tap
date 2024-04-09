@@ -9,5 +9,17 @@
 </head>
 <body>
     <h1>Đây là trang xóa</h1>
+
+    <?php 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    ?>
 </body>
 </html>

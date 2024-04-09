@@ -24,7 +24,7 @@
 
 <?php
 // Tạo kết nối
-$conn = new mysqli('localhost', 'root', '', 'sanpham');
+$conn = new mysqli('localhost', 'root', '', 'hocmysql');
 
 // Nếu kết nối thất bại
 if ($conn->connect_error) {
@@ -162,7 +162,7 @@ $result = $conn->query($sql);
                                     <?php echo $row["hsluong"] ?>
                                 </td>
                                 <td class="text-center">
-                                    <a href="Update/index.php?manv=<?php echo $row["manv"]; ?> &hoten=<?php echo $row["hoten"]; ?> &ngaysinh=<?php echo $row["ngaysinh"] ; ?> &dienthoai=<?php  echo $row["dienthoai"] ; ?> &hsluong=<?php echo $row["hsluong"]; ?>">
+                                    <a href="Update/index.php?manv=<?php echo $row["manv"]; ?>">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </a>
                                 </td>
