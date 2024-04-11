@@ -48,7 +48,7 @@ if ($conn->connect_error) {
 if ($conn->query($sql) === TRUE) {
     echo '<script>alert("Cập nhật dữ liệu thành công!");</script>';
 } else {
-    echo '<script>alert("ThCập nhậtêm dữ liệu thất bại: '.$conn->error.'");</script>';
+    echo '<script>alert("Cập nhật dữ liệu thất bại: '.$conn->error.'");</script>';
 }
  
 // Tạo xong thì ngắt kết nối

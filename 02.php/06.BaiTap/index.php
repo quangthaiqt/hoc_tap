@@ -167,7 +167,8 @@ $result = $conn->query($sql);
                                     </a>
                                 </td>
                                 <td class="text-center">
-                                    <a href="Delete/index.php"><i class="fa-solid fa-trash"></i></a>
+                                    <a href="Delete/index.php?manv=<?php echo $row["manv"]; ?>"><i
+                                            class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
 
