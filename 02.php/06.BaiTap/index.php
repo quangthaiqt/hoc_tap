@@ -85,6 +85,97 @@ $result = $conn->query($sql);
             </div>
         </div>
     </nav>
+    <div class="container mt-5">
+        <div class="row  mb-3">
+            <div class="col-md-2">
+                <label for="hoten" class="col-form-label">Họ và tên: </label>
+            </div>
+            <div class="col-md-3 ">
+                <div class="col-auto">
+                    <input type="text" id="hoten" class="form-control" name="hoten">
+                </div>
+            </div>
+            <div class="col-md-7">
+            </div>
+        </div>
+        <div class="row  mb-3">
+            <div class="col-md-2">
+                <label for="ngaysinh" class="col-form-label">Ngày sinh: </label>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-floating-label-height">
+                    <select  class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                    <option size="3" selected>2024</option>
+                        <!-- <option selected>Năm sinh</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option> -->
+                        <?php
+                        $year=2023;
+                        while($year>=2010){
+                            ?>
+                            <option value="<?php echo $year ?>"> <?php echo $year ?> </option>
+                            <?php
+                            $year--;
+                        }
+                        ?>
+                    </select>
+                </div>
+                <!-- <div class="col-auto">
+                    <input type="date" id=" ngaysinh" class="form-control" name="ngaysinh">
+                </div> -->
+
+            </div>
+            <div class="col-md-7">
+            </div>
+        </div>
+        <div class="row  mb-3">
+            <div class="col-md-2">
+                <label for="dienthoai" class="col-form-label">Số điện thoại: </label>
+            </div>
+            <div class="col-md-3">
+                <div class="col-auto">
+                    <input type="text" id="dienthoai" class="form-control" name="dienthoai">
+                </div>
+            </div>
+            <div class="col-md-7">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-2">
+                <label for="hsluong" class="col-form-label">Hệ số lương: </label>
+            </div>
+            <div class="col-md-1">
+                <div class="col-auto">
+                    <input type="number" id="hsluong" class="form-control" name="hsluong">
+                </div>
+            </div>
+            <div class="col-md-1">
+                <center>
+                    <p>~</p>
+                </center>
+            </div>
+            <div class="col-md-1">
+                <input type="number" id="hsluong" class="form-control" name="hsluong">
+            </div>
+            <div class="col-md-7"></div>
+            <div class="row mt-3">
+                <div class="col-md-2 ">
+                </div>
+                <div class="col-md-3 text-center">
+                    <a href="Them/index.php"><button type="button" class="btn btn-primary" data-mdb-ripple-init>
+                            Tìm kiếm
+                            <i class="fas fa-search"></i>
+                        </button></a>
+                </div>
+                <div class="col-md-7">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 
     <div class="container mt-5">
         <div class="row">
@@ -96,14 +187,7 @@ $result = $conn->query($sql);
             <div class="col-md-7"></div>
 
             <div class="col-md-4">
-                <div class="input-group">
-                    <div class="form-outline" data-mdb-input-init>
-                        <input type="search" id="form1" class="form-control" placeholder="Search" />
-                    </div>
-                    <a href="Them/index.php"><button type="button" class="btn btn-primary" data-mdb-ripple-init>
-                            <i class="fas fa-search"></i>
-                        </button></a>
-                </div>
+
 
             </div>
             <div class="col-md-1">
